@@ -22,41 +22,7 @@
 </head>
 <body class="font-sans antialiased text-gray-800">
     <!-- Header -->
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="#" class="text-2xl font-semibold text-primary">Web & We</a>
-                
-                <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="lg:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path class="block" id="menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        <path class="hidden" id="menuClose" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#blog" class="nav-link">Blog</a>
-                    <a href="#book" class="btn-primary">Book a Session</a>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4">
-                <div class="flex flex-col items-center space-y-4">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#blog" class="nav-link">Blog</a>
-                    <a href="#book" class="nav-link">Book a Session</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <!-- Hero Section -->
     <section id="home" class="pt-24 lg:pt-32 pb-16 bg-light">
@@ -167,7 +133,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Understanding Anxiety in Modern Life</h3>
                         <p class="text-gray-600 mb-4">Learn about the common triggers of anxiety and effective coping strategies for modern life challenges.</p>
-                        <a href="blog/understanding-anxiety.html" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
+                        <a href="blog.html?post=understanding-anxiety" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
                     </div>
                 </div>
 
@@ -177,7 +143,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Building Healthy Relationships</h3>
                         <p class="text-gray-600 mb-4">Discover key principles for nurturing strong, lasting relationships with your partner and loved ones.</p>
-                        <a href="blog/healthy-relationships.html" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
+                        <a href="blog.html?post=healthy-relationships" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
                     </div>
                 </div>
 
@@ -187,7 +153,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Self-Care in the Digital Age</h3>
                         <p class="text-gray-600 mb-4">Essential practices for maintaining mental wellness in our increasingly connected world.</p>
-                        <a href="blog/self-care-digital-age.html" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
+                        <a href="blog.html?post=self-care-digital-age" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -221,35 +187,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                    <p class="mb-2">Phone: (555) 123-4567</p>
-                    <p>Email: contact@mindsoul.com</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Connect</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-primary transition-colors">
-                            <img src="assets/icons/instagram.svg" alt="Instagram" class="w-6 h-6">
-                        </a>
-                        <a href="#" class="hover:text-primary transition-colors">
-                            <img src="assets/icons/tiktok.svg" alt="TikTok" class="w-6 h-6">
-                        </a>
-                        <a href="#" class="hover:text-primary transition-colors">
-                            <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6">
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm">&copy; 2025 Web & We Counseling. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize components
+        document.addEventListener('DOMContentLoaded', () => {
+            insertHeader();
+            insertFooter();
+        });
+    </script>
 </body>
 </html>

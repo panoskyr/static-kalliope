@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Mind & Soul Counseling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/plugins/typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DD0303',
+                        border: '#FAB12F',
+                        light: '#FEF3E2',
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                maxWidth: 'none',
+                                color: '#333',
+                                a: {
+                                    color: '#DD0303',
+                                    '&:hover': {
+                                        color: '#B30202',
+                                    },
+                                },
+                                h1: {
+                                    color: '#333',
+                                },
+                                h2: {
+                                    color: '#333',
+                                },
+                                h3: {
+                                    color: '#333',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            plugins: [require('@tailwindcss/typography')],
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Blog Content -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <article id="blogContent" class="max-w-3xl mx-auto prose lg:prose-lg">
+                <!-- Content will be loaded here -->
+                <div class="flex justify-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize components
+        document.addEventListener('DOMContentLoaded', () => {
+            insertHeader();
+            insertFooter();
+        });
+
+        // Function to get query parameters from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to load and render markdown content
+        async function loadBlogPost() {
+            const postName = getQueryParam('post');
+            if (!postName) {
+                window.location.href = 'index.html#blog';
+                return;
+            }
+
+            try {
+                const response = await fetch(`blog/${postName}.md`);
+                if (!response.ok) {
+                    throw new Error('Post not found');
+                }
+                const markdown = await response.text();
+                const content = marked.parse(markdown);
+                document.getElementById('blogContent').innerHTML = content;
+            } catch (error) {
+                document.getElementById('blogContent').innerHTML = `
+                    <div class="text-center">
+                        <h1 class="text-2xl font-bold text-gray-800 mb-4">Post Not Found</h1>
+                        <p class="text-gray-600">The blog post you're looking for couldn't be found.</p>
+                        <a href="index.html#blog" class="text-primary hover:text-primary/80 mt-4 inline-block">Return to Blog</a>
+                    </div>
+                `;
+            }
+        }
+
+        // Load the blog post when the page loads
+        document.addEventListener('DOMContentLoaded', loadBlogPost);
+    </script>
+</body>
+</html>
