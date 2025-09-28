@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Mind & Soul Counseling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <div id="header"></div>
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <a href="blog.html" class="text-primary hover:text-primary/80 font-medium block mb-8">← Back to All Posts</a>
+        <div id="post-content" class="max-w-3xl mx-auto"></div>
+    </main>
+    <div id="footer"></div>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        insertHeader();
+        insertFooter();
+        // Get post name from query string
+        const params = new URLSearchParams(window.location.search);
+        const postName = params.get('post');
+        if (!postName) {
+            document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">No post specified.</p>';
+            return;
+        }
+        fetch(`blog/${postName}.md`)
+            .then(res => res.ok ? res.text() : Promise.reject('Post not found'))
+            .then(md => {
+                document.getElementById('post-content').innerHTML = marked.parse(md);
+            })
+            .catch(() => {
+                document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">Post not found.</p>';
+            });
+    });
+    </script>
+</body>
+</html>
