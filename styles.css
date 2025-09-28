@@ -1,0 +1,126 @@
+/* Custom utility classes */
+.nav-link {
+    color: #4B5563;
+    transition: color 300ms;
+}
+.nav-link:hover {
+    color: #DD0303;
+}
+
+.btn-primary {
+    background-color: #FAB12F;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 300ms;
+}
+.btn-primary:hover {
+    background-color: rgba(221, 3, 3, 0.9);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #DD0303;
+    border: 2px solid #DD0303;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 300ms;
+}
+.btn-secondary:hover {
+    background-color: #FEF3E2;
+}
+
+.service-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(250, 177, 47, 0.2);
+    transition: all 300ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.service-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    color: #DD0303;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #FEF3E2;
+    border-radius: 9999px;
+}
+
+.blog-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 300ms;
+    border: 1px solid rgba(250, 177, 47, 0.2);
+}
+.blog-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    transition: all 300ms;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #DD0303;
+    box-shadow: 0 0 0 2px rgba(221, 3, 3, 0.25);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Mobile menu styles */
+#mobileMenu {
+    transition: all 300ms ease-in-out;
+}
+
+#mobileMenu.hidden {
+    opacity: 0;
+}
+
+#mobileMenu:not(.hidden) {
+    opacity: 1;
+}
+
+/* Mobile nav links */
+#mobileMenu .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 300ms;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+#mobileMenu .nav-link:hover {
+    background-color: #FEF3E2;
+}
+
+#mobileMenu.open {
+    max-height: 300px;
+}
