@@ -19,22 +19,22 @@ function insertHeader() {
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="${linkPrefix}home" class="nav-link">Home</a>
-                    <a href="${linkPrefix}services" class="nav-link">Services</a>
-                    <a href="${linkPrefix}about" class="nav-link">About</a>
-                    <a href="${linkPrefix}blog" class="nav-link">Blog</a>
-                    <a href="${linkPrefix}book" class="btn-primary">Book a Session</a>
+                    <a href="${linkPrefix}home" class="nav-link">Αρχική</a>
+                    <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
+                    <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
+                    <a href="${linkPrefix}location" class="nav-link">Τοποθεσία</a>
+                    <a href="${linkPrefix}book" class="btn-primary">Κλέιστε Ραντεβού</a>
                 </div>
             </div>
 
             <!-- Mobile Navigation -->
             <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4">
-                <div class="flex flex-col items-center space-y-4">
-                    <a href="${linkPrefix}home" class="nav-link">Home</a>
-                    <a href="${linkPrefix}services" class="nav-link">Services</a>
-                    <a href="${linkPrefix}about" class="nav-link">About</a>
-                    <a href="${linkPrefix}blog" class="nav-link">Blog</a>
-                    <a href="${linkPrefix}book" class="nav-link">Book a Session</a>
+                <div class="flex flex-col items-center space-y-2">
+                    <a href="${linkPrefix}home" class="nav-link">Αρχική</a>
+                    <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
+                    <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
+                    <a href="${linkPrefix}location" class="nav-link">Τοποθεσία</a>
+                    <a href="${linkPrefix}book" class="nav-link">Κλείστε Ραντεβού</a>
                 </div>
             </div>
         </nav>
