@@ -23,7 +23,7 @@ function insertHeader() {
                     <a href="${linkPrefix}services" class="nav-link">Services</a>
                     <a href="${linkPrefix}about" class="nav-link">About</a>
                     <a href="${linkPrefix}blog" class="nav-link">Blog</a>
-                    <a href="${linkPrefix}book" class="btn-primary">Book a Session</a>
+                    <a href="${linkPrefix}book" class="btn-primary">Κλέιστε Ραντεβού</a>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@ function insertHeader() {
                     <a href="${linkPrefix}services" class="nav-link">Services</a>
                     <a href="${linkPrefix}about" class="nav-link">About</a>
                     <a href="${linkPrefix}blog" class="nav-link">Blog</a>
-                    <a href="${linkPrefix}book" class="nav-link">Book a Session</a>
+                    <a href="${linkPrefix}book" class="nav-link">Κλείστε Ραντεβού</a>
                 </div>
             </div>
         </nav>
