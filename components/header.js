@@ -2,7 +2,7 @@ function insertHeader() {
     const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
     const linkPrefix = isIndexPage ? '#' : 'index.html#';
     const homeLink = isIndexPage ? '#' : 'index.html';
-    
+
     const header = `
     <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <nav class="container mx-auto px-4 py-4">
@@ -30,27 +30,44 @@ function insertHeader() {
             <!-- Mobile Navigation -->
             <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4">
                 <div class="flex flex-col items-center space-y-2">
-                    <a href="${linkPrefix}home" class="nav-link">Αρχική</a>
-                    <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
-                    <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
-                    <a href="${linkPrefix}location" class="nav-link">Τοποθεσία</a>
-                    <a href="${linkPrefix}book" class="nav-link">Κλείστε Ραντεβού</a>
+                    <a href="${linkPrefix}home" class="nav-link mobile-link">Αρχική</a>
+                    <a href="${linkPrefix}services" class="nav-link mobile-link">Υπηρεσίες</a>
+                    <a href="${linkPrefix}about" class="nav-link mobile-link">Η Ψυχολόγος</a>
+                    <a href="${linkPrefix}location" class="nav-link mobile-link">Τοποθεσία</a>
+                    <a href="${linkPrefix}book" class="nav-link mobile-link">Κλείστε Ραντεβού</a>
                 </div>
             </div>
         </nav>
     </header>`;
-    
+
     document.getElementById('header').innerHTML = header;
-    
+
     // Initialize mobile menu functionality
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuOpen = document.getElementById('menuOpen');
     const menuClose = document.getElementById('menuClose');
 
-    menuBtn.addEventListener('click', () => {
+    // Get all mobile menu links using the new 'mobile-link' class
+    const mobileLinks = document.querySelectorAll('#mobileMenu .mobile-link');
+
+    // --- Menu Toggle Function ---
+    const toggleMenu = () => {
         mobileMenu.classList.toggle('hidden');
         menuOpen.classList.toggle('hidden');
         menuClose.classList.toggle('hidden');
+    };
+
+    // 1. Toggle when the menu button is clicked
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // 2. Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Check if the menu is currently open (not hidden) before closing
+            if (!mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
     });
 }
