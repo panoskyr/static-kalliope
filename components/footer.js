@@ -5,8 +5,8 @@ function insertFooter() {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                    <p class="mb-2">Phone: (555) 123-4567</p>
-                    <p>Email: contact@mindsoul.com</p>
+                    <p class="mb-2">Phone: (+30) 6946401733</p>
+                    <p>Email: kalliopi.thanou99@gmail.com</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Connect</h3>
@@ -24,7 +24,7 @@ function insertFooter() {
                 </div>
                 <div>
                     <img src="assets/icons/webandwe_logo.png" alt="Web & We Logo" class="h-20 w-auto mx-auto mb-3 rounded-lg bg-light p-2">
-                    <p class="text-sm">&copy; 2025 Web & We Counseling. All rights reserved.</p>
+                    <p class="text-sm">&copy; 2025 Web & We. All rights reserved.</p>
                 </div>
             </div>
         </div>
