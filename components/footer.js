@@ -11,13 +11,10 @@ function insertFooter() {
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Connect</h3>
                     <div class="flex justify-center space-x-4">
-                        <a href="#" class="hover:text-primary transition-colors">
+                        <a href="https://www.instagram.com/webandwe?igsh=MXU4YXViYzZibnlj" class="hover:text-primary transition-colors">
                             <img src="assets/icons/instagram.svg" alt="Instagram" class="w-6 h-6">
                         </a>
-                        <a href="#" class="hover:text-primary transition-colors">
-                            <img src="assets/icons/tiktok.svg" alt="TikTok" class="w-6 h-6">
-                        </a>
-                        <a href="#" class="hover:text-primary transition-colors">
+                        <a href="https://www.linkedin.com/in/kalliopi-thanou?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-primary transition-colors">
                             <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6">
                         </a>
                     </div>
