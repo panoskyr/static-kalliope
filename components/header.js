@@ -29,7 +29,7 @@ function insertHeader() {
 
             <!-- Mobile Navigation -->
             <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4">
-                <div class="flex flex-col items-center space-y-4">
+                <div class="flex flex-col items-center space-y-2">
                     <a href="${linkPrefix}home" class="nav-link">Αρχική</a>
                     <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
                     <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
