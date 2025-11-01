@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="description"
+        content="Web &amp; We – Ψυχολόγος MSc-CBT στον Κορυδαλλό: υποστήριξη για ενήλικες, παιδιά &amp; εφήβους σε θέματα ψυχικής υγείας, ψηφιακής συμπεριφοράς, εξάρτησης από το διαδίκτυο και κυβερνοεκφοβισμού.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post | Mind & Soul Counseling</title>
+    <title>Web &amp; We | Ψυχολόγος Κορυδαλλός - Καλλιόπη Θάνου, MSc-CBT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DD0303',
+                        border: '#FAB12F',
+                        light: '#FEF3E2',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="font-sans antialiased text-gray-800">
     <div id="header"></div>
     <main class="container mx-auto px-4 pt-24 pb-16">
@@ -18,25 +35,26 @@
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        insertHeader();
-        insertFooter();
-        // Get post name from query string
-        const params = new URLSearchParams(window.location.search);
-        const postName = params.get('post');
-        if (!postName) {
-            document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">No post specified.</p>';
-            return;
-        }
-        fetch(`blog/${postName}.md`)
-            .then(res => res.ok ? res.text() : Promise.reject('Post not found'))
-            .then(md => {
-                document.getElementById('post-content').innerHTML = marked.parse(md);
-            })
-            .catch(() => {
-                document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">Post not found.</p>';
-            });
-    });
+        document.addEventListener('DOMContentLoaded', () => {
+            insertHeader();
+            insertFooter();
+            // Get post name from query string
+            const params = new URLSearchParams(window.location.search);
+            const postName = params.get('post');
+            if (!postName) {
+                document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">No post specified.</p>';
+                return;
+            }
+            fetch(`blog/${postName}.md`)
+                .then(res => res.ok ? res.text() : Promise.reject('Post not found'))
+                .then(md => {
+                    document.getElementById('post-content').innerHTML = marked.parse(md);
+                })
+                .catch(() => {
+                    document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">Post not found.</p>';
+                });
+        });
     </script>
 </body>
+
 </html>

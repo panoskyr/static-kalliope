@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="description"
+        content="Web &amp; We – Ψυχολόγος MSc-CBT στον Κορυδαλλό: υποστήριξη για ενήλικες, παιδιά &amp; εφήβους σε θέματα ψυχικής υγείας, ψηφιακής συμπεριφοράς, εξάρτησης από το διαδίκτυο και κυβερνοεκφοβισμού.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Mind & Soul Counseling</title>
+    <title>Web &amp; We | Ψυχολόγος Κορυδαλλός - Καλλιόπη Θάνου, MSc-CBT</title>
     <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DD0303',
+                        border: '#FAB12F',
+                        light: '#FEF3E2',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body class="font-sans antialiased text-gray-800">
     <div id="header"></div>
     <main class="container mx-auto pt-24 px-4 py-16">
         <h2 class="text-3xl font-bold text-center mb-12">Latest Insights</h2>
-        <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </main>
     <div id="footer"></div>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        insertHeader();
-        insertFooter();
-        fetch('blog/posts.json')
-            .then(res => res.json())
-            .then(posts => {
-                const list = document.getElementById('blog-list');
-                list.innerHTML = posts.map(post => `
-                    <div class="blog-card">
-                        <img src="https://placehold.co/400x250" alt="${post.title}" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-3">${post.title}</h3>
-                            <p class="text-gray-600 mb-4">${post.description}</p>
-                            <a href="post.html?post=${post.filename}" class="text-primary hover:text-primary/80 font-medium">Read More →</a>
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                document.getElementById('blog-list').innerHTML = '<p class="text-center text-lg">No blog posts found.</p>';
-            });
-    });
+    <script type="module">
+
+        import { fetchAndRender } from './components/blog.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            insertHeader();
+            insertFooter();
+            fetchAndRender('./blog/posts.json', '#blog-posts')
+        });
     </script>
 </body>
+
 </html>
