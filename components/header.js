@@ -23,7 +23,7 @@ function insertHeader() {
                     <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
                     <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
                     <a href="${linkPrefix}location" class="nav-link">Τοποθεσία</a>
-                    <a href="${linkPrefix}book" class="btn-primary">Κλέιστε Ραντεβού</a>
+                    <a href="${linkPrefix}book" class="btn-primary">Κλείστε Ραντεβού</a>
                 </div>
             </div>
 

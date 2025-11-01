@@ -13,7 +13,7 @@ export function renderPosts(listEl, posts) {
     listEl.innerHTML = posts.map(renderPost).join('');
 }
 
-export function fetchAndRender(url, selector, limit) {
+export function fetchAndRender(url, selector, limit=100) {
     const list = document.querySelector(selector);
     if (!list) return;
     fetch(url)
