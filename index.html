@@ -178,45 +178,14 @@
     </section>
 
     <!-- Blog Section -->
-    <!-- <section id="blog" class="py-16">
+     <section id="blog" class="py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Latest Insights</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="blog-card">
-                    <img src="https://placehold.co/400x250" alt="Blog 1" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Understanding Anxiety in Modern Life</h3>
-                        <p class="text-gray-600 mb-4">Learn about the common triggers of anxiety and effective coping
-                            strategies for modern life challenges.</p>
-                        <a href="post.html?post=understanding-anxiety"
-                            class="text-primary hover:text-primary/80 font-medium">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="https://placehold.co/400x250" alt="Blog 2" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Building Healthy Relationships</h3>
-                        <p class="text-gray-600 mb-4">Discover key principles for nurturing strong, lasting
-                            relationships with your partner and loved ones.</p>
-                        <a href="post.html?post=healthy-relationships"
-                            class="text-primary hover:text-primary/80 font-medium">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="https://placehold.co/400x250" alt="Blog 3" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Self-Care in the Digital Age</h3>
-                        <p class="text-gray-600 mb-4">Essential practices for maintaining mental wellness in our
-                            increasingly connected world.</p>
-                        <a href="post.html?post=self-care-digital-age"
-                            class="text-primary hover:text-primary/80 font-medium">Read More →</a>
-                    </div>
-                </div>
+            <div id='blog-posts' class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
         </div>
-    </section> -->
+    </section>
+
     <!-- Google Maps Location Section -->
     <section id="location" class="lg:pt-24 pt-16 pb-16">
         <div class="container mx-auto px-4">
@@ -262,11 +231,13 @@
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Initialize components
+    <script type="module">
+        import {fetchAndRender} from './components/blog.js';
         document.addEventListener('DOMContentLoaded', () => {
             insertHeader();
             insertFooter();
+
+            fetchAndRender('./blog/posts.json', '#blog-posts', 3)
         });
     </script>
 </body>
