@@ -45,7 +45,7 @@
                 document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">No post specified.</p>';
                 return;
             }
-            fetch(`blog/${postName}.md`)
+            fetch(`blog/${postName}`)
                 .then(res => res.ok ? res.text() : Promise.reject('Post not found'))
                 .then(md => {
                     document.getElementById('post-content').innerHTML = marked.parse(md);
