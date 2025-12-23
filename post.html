@@ -29,12 +29,20 @@
     <div id="header"></div>
     <main class="container mx-auto px-4 pt-24 pb-16">
         <a href="blog.html" class="text-primary hover:text-primary/80 font-medium block mb-8">← Back to All Posts</a>
-        <div id="post-content" class="max-w-3xl mx-auto"></div>
+        <div id="post-content" class="max-w-3xl mx-auto prose"></div>
     </main>
     <div id="footer"></div>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <script>
+        // Configure marked options
+        marked.setOptions({
+            gfm: true,
+            breaks: true,
+            headerIds: true,
+            mangle: false
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             insertHeader();
             insertFooter();
