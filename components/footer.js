@@ -1,6 +1,6 @@
 function insertFooter() {
     const footer = `
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 text-white py-12 mt-auto">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
                 <div>
