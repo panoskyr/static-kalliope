@@ -22,6 +22,7 @@ function insertHeader() {
                     <a href="${linkPrefix}home" class="nav-link">Αρχική</a>
                     <a href="${linkPrefix}services" class="nav-link">Υπηρεσίες</a>
                     <a href="${linkPrefix}about" class="nav-link">Η Ψυχολόγος</a>
+                    <a href="${linkPrefix}blog" class="nav-link">Blog</a>
                     <a href="${linkPrefix}location" class="nav-link">Τοποθεσία</a>
                     <a href="${linkPrefix}book" class="btn-primary">Κλείστε Ραντεβού</a>
                 </div>
@@ -33,6 +34,7 @@ function insertHeader() {
                     <a href="${linkPrefix}home" class="nav-link mobile-link">Αρχική</a>
                     <a href="${linkPrefix}services" class="nav-link mobile-link">Υπηρεσίες</a>
                     <a href="${linkPrefix}about" class="nav-link mobile-link">Η Ψυχολόγος</a>
+                    <a href="${linkPrefix}blog" class="nav-link mobile-link">Blog</a>
                     <a href="${linkPrefix}location" class="nav-link mobile-link">Τοποθεσία</a>
                     <a href="${linkPrefix}book" class="nav-link mobile-link">Κλείστε Ραντεβού</a>
                 </div>
