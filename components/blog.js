@@ -1,6 +1,5 @@
 export function renderPost(post) {
     return `<div class="blog-card">
-            <img src="https://placehold.co/400x250" alt="${post.title}" class="w-full h-48 object-cover rounded-t-lg">
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-3">${post.title}</h3>
                 <p class="text-gray-600 mb-4">${post.description}</p>
