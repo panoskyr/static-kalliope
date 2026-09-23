@@ -1,0 +1,11 @@
+{
+    "name": "static-kalliope",
+    "private": true,
+    "scripts": {
+        "format": "prettier --write \"*.html\" \"*.css\" \"*.js\" \"components/**/*.js\" \"blog/posts.json\" \"package.json\" \".prettierrc.json\"",
+        "format:check": "prettier --check \"*.html\" \"*.css\" \"*.js\" \"components/**/*.js\" \"blog/posts.json\" \"package.json\" \".prettierrc.json\""
+    },
+    "devDependencies": {
+        "prettier": "3.9.8"
+    }
+}

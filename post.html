@@ -1,67 +1,88 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="el" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Άρθρα για την ψυχολογία, την ψυχική υγεία παιδιών και εφήβων και την ψηφιακή ευεξία από την Καλλιόπη Θάνου, ψυχολόγο στον Κορυδαλλό."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Άρθρο ψυχολογίας | Web &amp; We</title>
+        <link rel="canonical" href="https://webandwe.gr/post.html" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#DD0303',
+                            border: '#FAB12F',
+                            light: '#FEF3E2',
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="Web &amp; We – Ψυχολόγος MSc-CBT στον Κορυδαλλό: υποστήριξη για ενήλικες, παιδιά &amp; εφήβους σε θέματα ψυχικής υγείας, ψηφιακής συμπεριφοράς, εξάρτησης από το διαδίκτυο και κυβερνοεκφοβισμού.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web &amp; We | Ψυχολόγος Κορυδαλλός - Καλλιόπη Θάνου, MSc-CBT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-            <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#DD0303',
-                        border: '#FAB12F',
-                        light: '#FEF3E2',
-                    }
+    <body class="font-sans antialiased text-gray-800 min-h-screen flex flex-col">
+        <div id="header"></div>
+        <main class="container mx-auto px-4 pt-24 pb-16 flex-1">
+            <a href="blog.html" class="text-primary hover:text-primary/80 font-medium block mb-8"
+                >← Back to All Posts</a
+            >
+            <div id="post-content" class="max-w-3xl mx-auto prose"></div>
+        </main>
+        <div id="footer"></div>
+        <script src="components/header.js"></script>
+        <script src="components/footer.js"></script>
+        <script>
+            marked.setOptions({
+                gfm: true,
+                breaks: true,
+                headerIds: true,
+                mangle: false,
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                insertHeader();
+                insertFooter();
+                // Get post name from query string
+                const params = new URLSearchParams(window.location.search);
+                const postName = params.get('post');
+                if (!postName) {
+                    document.getElementById('post-content').innerHTML =
+                        '<p class="text-center text-lg">No post specified.</p>';
+                    return;
                 }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body class="font-sans antialiased text-gray-800 min-h-screen flex flex-col">
-    <div id="header"></div>
-    <main class="container mx-auto px-4 pt-24 pb-16 flex-1">
-        <a href="blog.html" class="text-primary hover:text-primary/80 font-medium block mb-8">← Back to All Posts</a>
-        <div id="post-content" class="max-w-3xl mx-auto prose"></div>
-    </main>
-    <div id="footer"></div>
-    <script src="components/header.js"></script>
-    <script src="components/footer.js"></script>
-    <script>
-        marked.setOptions({
-            gfm: true,
-            breaks: true,
-            headerIds: true,
-            mangle: false
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            insertHeader();
-            insertFooter();
-            // Get post name from query string
-            const params = new URLSearchParams(window.location.search);
-            const postName = params.get('post');
-            if (!postName) {
-                document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">No post specified.</p>';
-                return;
-            }
-            fetch(`blog/posts/${postName}`)
-                .then(res => res.ok ? res.text() : Promise.reject('Post not found'))
-                .then(md => {
-                    document.getElementById('post-content').innerHTML = marked.parse(md);
-                })
-                .catch(() => {
-                    document.getElementById('post-content').innerHTML = '<p class="text-center text-lg">Post not found.</p>';
-                });
-        });
-    </script>
-</body>
-
+                fetch('blog/posts.json')
+                    .then((res) => res.json())
+                    .then((posts) => {
+                        const post = posts.find((item) => item.filename === postName);
+                        if (!post) return;
+                        const title = `${post.seoTitle || post.title} | Web & We`;
+                        document.title = title;
+                        document.querySelector('meta[name="description"]').content =
+                            post.description;
+                        const canonical = new URL(
+                            `post.html?post=${encodeURIComponent(post.filename)}`,
+                            window.location.href
+                        );
+                        document.querySelector('link[rel="canonical"]').href = canonical.href;
+                    })
+                    .catch(() => {});
+                fetch(`blog/posts/${postName}`)
+                    .then((res) => (res.ok ? res.text() : Promise.reject('Post not found')))
+                    .then((md) => {
+                        document.getElementById('post-content').innerHTML = marked.parse(md);
+                    })
+                    .catch(() => {
+                        document.getElementById('post-content').innerHTML =
+                            '<p class="text-center text-lg">Post not found.</p>';
+                    });
+            });
+        </script>
+    </body>
 </html>

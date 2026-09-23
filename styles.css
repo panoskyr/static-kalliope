@@ -1,14 +1,14 @@
 /* Custom utility classes */
 .nav-link {
-    color: #4B5563;
+    color: #4b5563;
     transition: color 300ms;
 }
 .nav-link:hover {
-    color: #DD0303;
+    color: #dd0303;
 }
 
 .btn-primary {
-    background-color: #FAB12F;
+    background-color: #fab12f;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -20,14 +20,14 @@
 
 .btn-secondary {
     background-color: white;
-    color: #DD0303;
-    border: 2px solid #DD0303;
+    color: #dd0303;
+    border: 2px solid #dd0303;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: background-color 300ms;
 }
 .btn-secondary:hover {
-    background-color: #FEF3E2;
+    background-color: #fef3e2;
 }
 
 .service-card {
@@ -47,10 +47,10 @@
 }
 
 .service-icon {
-    color: #DD0303;
+    color: #dd0303;
     margin-bottom: 1rem;
     padding: 0.75rem;
-    background-color: #FEF3E2;
+    background-color: #fef3e2;
     border-radius: 9999px;
 }
 
@@ -68,13 +68,13 @@
 .form-input {
     width: 100%;
     padding: 0.5rem 1rem;
-    border: 1px solid #D1D5DB;
+    border: 1px solid #d1d5db;
     border-radius: 0.5rem;
     transition: all 300ms;
 }
 .form-input:focus {
     outline: none;
-    border-color: #DD0303;
+    border-color: #dd0303;
     box-shadow: 0 0 0 2px rgba(221, 3, 3, 0.25);
 }
 
@@ -118,7 +118,7 @@
     border-radius: 0.5rem;
 }
 #mobileMenu .nav-link:hover {
-    background-color: #FEF3E2;
+    background-color: #fef3e2;
 }
 
 #mobileMenu.open {
@@ -153,27 +153,27 @@
 }
 #post-content figcaption {
     text-align: center;
-    color: #6B7280; /* gray-500 */
+    color: #6b7280; /* gray-500 */
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
 #post-content blockquote {
-    border-left: 4px solid #FBBF24; /* amber-400 */
+    border-left: 4px solid #fbbf24; /* amber-400 */
     padding: 0.5rem 1rem;
     color: #374151;
-    background: #FFFBEB; /* light background */
+    background: #fffbeb; /* light background */
     margin: 1rem 0;
 }
 #post-content pre {
     background: #111827; /* gray-900 */
-    color: #F9FAFB;
+    color: #f9fafb;
     padding: 1rem;
     border-radius: 0.5rem;
     overflow: auto;
 }
 #post-content code {
     background: rgba(15, 23, 42, 0.6);
-    color: #F9FAFB;
+    color: #f9fafb;
     padding: 0.125rem 0.35rem;
     border-radius: 0.25rem;
 }
@@ -184,7 +184,7 @@
 }
 #post-content table th,
 #post-content table td {
-    border: 1px solid #E5E7EB; /* gray-200 */
+    border: 1px solid #e5e7eb; /* gray-200 */
     padding: 0.5rem 0.75rem;
 }
 #post-content ul,
@@ -195,7 +195,7 @@
 #post-content hr {
     border: none;
     height: 1px;
-    background: #E6E7E8;
+    background: #e6e7e8;
     margin: 2rem 0;
 }
 

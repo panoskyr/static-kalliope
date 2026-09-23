@@ -1,48 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="Web &amp; We – Ψυχολόγος MSc-CBT στον Κορυδαλλό: υποστήριξη για ενήλικες, παιδιά &amp; εφήβους σε θέματα ψυχικής υγείας, ψηφιακής συμπεριφοράς, εξάρτησης από το διαδίκτυο και κυβερνοεκφοβισμού.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web &amp; We | Ψυχολόγος Κορυδαλλός - Καλλιόπη Θάνου, MSc-CBT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<!doctype html>
+<html lang="el" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Άρθρα της ψυχολόγου Καλλιόπης Θάνου για την ψυχική υγεία παιδιών και εφήβων, τη συμβουλευτική γονέων και την ισορροπημένη χρήση της τεχνολογίας."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Άρθρα ψυχολογίας για παιδιά και γονείς | Web &amp; We</title>
+        <link rel="canonical" href="https://webandwe.gr/blog.html" />
+        <script src="https://cdn.tailwindcss.com"></script>
         <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#DD0303',
-                        border: '#FAB12F',
-                        light: '#FEF3E2',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="styles.css">
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#DD0303',
+                            border: '#FAB12F',
+                            light: '#FEF3E2',
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-</head>
-
-<body class="font-sans antialiased text-gray-800 min-h-screen flex flex-col">
-    <div id="header"></div>
-    <main class="container mx-auto pt-24 px-4 py-16 flex-1">
-        <h2 class="text-3xl font-bold text-center mb-12">Μικρές Ιστορίες</h2>
-        <div id="blog-posts"></div>
-    </main>
-    <div id="footer"></div>
-    <script src="components/header.js"></script>
-    <script src="components/footer.js"></script>
-    <script type="module">
-
-        import { fetchAndRender } from './components/blog.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            insertHeader();
-            insertFooter();
-            fetchAndRender('./blog/posts.json', '#blog-posts')
-        });
-    </script>
-</body>
-
+    <body class="font-sans antialiased text-gray-800 min-h-screen flex flex-col">
+        <div id="header"></div>
+        <main class="container mx-auto pt-24 px-4 py-16 flex-1">
+            <h2 class="text-3xl font-bold text-center mb-12">Μικρές Ιστορίες</h2>
+            <div id="blog-posts"></div>
+        </main>
+        <div id="footer"></div>
+        <script src="components/header.js"></script>
+        <script src="components/footer.js"></script>
+        <script type="module">
+            import { fetchAndRender } from './components/blog.js';
+            document.addEventListener('DOMContentLoaded', () => {
+                insertHeader();
+                insertFooter();
+                fetchAndRender('./blog/posts.json', '#blog-posts');
+            });
+        </script>
+    </body>
 </html>
