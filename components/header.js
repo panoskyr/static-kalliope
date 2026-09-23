@@ -1,5 +1,6 @@
 function insertHeader() {
-    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+    const isIndexPage =
+        window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
     const linkPrefix = isIndexPage ? '#' : 'index.html#';
     const homeLink = isIndexPage ? '#' : 'index.html';
 
@@ -64,7 +65,7 @@ function insertHeader() {
     menuBtn.addEventListener('click', toggleMenu);
 
     // 2. Close menu when a link is clicked
-    mobileLinks.forEach(link => {
+    mobileLinks.forEach((link) => {
         link.addEventListener('click', () => {
             // Check if the menu is currently open (not hidden) before closing
             if (!mobileMenu.classList.contains('hidden')) {

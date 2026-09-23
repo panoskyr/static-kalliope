@@ -26,6 +26,6 @@ function insertFooter() {
             </div>
         </div>
     </footer>`;
-    
+
     document.getElementById('footer').innerHTML = footer;
 }

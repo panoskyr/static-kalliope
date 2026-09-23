@@ -8,17 +8,17 @@ export function renderPost(post) {
         </div>`;
 }
 export function renderPosts(listEl, posts) {
-    listEl.innerHTML =  `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    listEl.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         ${posts.map(renderPost).join('')}
     </div>`;
 }
 
-export function fetchAndRender(url, selector, limit=100) {
+export function fetchAndRender(url, selector, limit = 100) {
     const list = document.querySelector(selector);
     if (!list) return;
     fetch(url)
-        .then(res => res.json())
-        .then(posts => {
+        .then((res) => res.json())
+        .then((posts) => {
             if (typeof limit === 'number') posts = posts.slice(0, limit);
             renderPosts(list, posts);
         })
